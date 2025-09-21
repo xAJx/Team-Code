@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>果島小舖_精選商品 + 限時活動</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .product-card img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: auto;
+      display: block;
+    }
+    .section-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #b45f06; /* 橘咖色 */
+    }
+    .btn-custom {
+      background-color: #e85d04;
+      color: #fff;
+      border-radius: 25px;
+      padding: 8px 20px;
+    }
+    .btn-custom:hover {
+      background-color: #d9480f;
+      color: #fff;
+    }
+    .limited-offer {
+      background-color: #fff8f0;
+      padding: 50px 20px;
+      border-radius: 20px;
+    }
+    .limited-offer img {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 精選商品 -->
+  <section class="py-5">
+    <h2 class="section-title">精選商品</h2>
+    <div class="container">
+      <div class="row text-center">
+        <!-- 商品 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <img src="Tangerine.jpg" alt="橘子">
+            <h5 class="mt-3">柑橘的好滋味</h5>
+            <p class="text-muted">新鮮多汁，香甜可口，富含維他命C。</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+        <!-- 商品 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <img src="Strawberry.jpg" alt="草莓">
+            <h5 class="mt-3">草莓新鮮房</h5>
+            <p class="text-muted">酸甜多汁，口感清爽，最受小朋友喜愛。</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+        <!-- 商品 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <img src="Mango.jpg" alt="芒果">
+            <h5 class="mt-3">芒果熱賣季</h5>
+            <p class="text-muted">香氣濃郁，果肉軟嫩，夏季最佳享受。</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 限時活動 -->
+  <section class="py-5 limited-offer">
+    <div class="container">
+      <h2 class="section-title">限時活動</h2>
+      <div class="row align-items-center">
+        <!-- 左邊大圖 -->
+        <div class="col-md-7 text-center">
+          <img src="Wax-apple.jpg" alt="桃子" class="img-fluid rounded">
+        </div>
+        <!-- 右邊活動資訊 -->
+        <div class="col-md-5 text-center">
+          <img src="Apple.jpg" alt="小桃子" class="img-fluid mb-3">
+          <h4>桃太郎促銷</h4>
+          <p class="text-muted">甜美多汁的水蜜桃，限時特惠！新鮮直送，錯過不再。</p>
+          <button class="btn btn-custom">立即搶購</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
