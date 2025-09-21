@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: Arial, "微軟正黑體", sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* 顧客回饋 */
+.reviews {
+  background: url("apple-bg.jpg") no-repeat center/cover;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.reviews .title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.reviews .title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 8px;
+  background: #ffd633;
+  z-index: -1;
+}
+
+.review-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  color: #ff6600;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.more-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background: #e65400;
+  color: #fff;
+  padding: 30px 0 10px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-logo p {
+  margin: 5px 0 0;
+  font-weight: bold;
+}
+
+.footer-info p {
+  margin: 4px 0;
+}
+
+.footer-social a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
