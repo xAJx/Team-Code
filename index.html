@@ -1,11 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>果島小舖</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #fbf6f1;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: #4a3b2f;
+    }
+
+    /* ===== 標題 + 黃色底線 ===== */
+    
+    /* 精選 */
+    .section-title {
+      color: brown;
+      position: relative;
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
+    }
+ 
+    /*  限時  */
+    .section-title2 { 
+      color: red;
+      position: relative;
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 1px;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 12px;
+      background-color: #FFD700;
+      z-index: -1;
+    }
+
+    .section-title2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 1px;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 12px;
+      background-color: #FFD700;
+      z-index: -1;
+    }
+
+    /* ===== 精選商品卡片 ===== */
+    .product-card {
+      background: white;
+      border-radius: 36px;
+      /* padding: 70px 24px 28px; */
+      padding: 60px 24px 28px;
+
+      box-shadow: 0 6px 18px rgba(30,30,30,0.06);
+      position: relative;
+      text-align: center;
+      min-height: 340px;
+      border-radius: 35%;
+    }
+
+    /*外圍-圓圈*/
+    .product-img-wrap {
+      width: 160px;
+      height: 160px;
+      margin: -100px auto 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      padding: 8px;
+      /*border: 4px dotted rgba(230,120,60,0.35);*/
+      border: 2px dotted orange;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .product-card h5 {
+      margin-top: 18px;
+      font-weight: 700;
+      color: #7b4a26;
+    }
+    .product-card p {
+      font-size: 14px;
+      color: #7b6b63;
+      margin: 12px 0 18px;
+      min-height: 44px;
+    }
+
+    /* 立即購買按鈕 */
+    .btn-custom {
+      background: #e85d04;
+      color: #fff;
+      border-radius: 26px;
+      padding: 8px 22px;
+      font-weight: 700;
+      border: none;
+    }
+    .btn-custom:hover {
+      background: #d94c00;
+    }
+
+    /* 查看更多 */
+    .see-more {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .see-more a {
+      font-weight: 600;
+      color: black;
+      text-decoration: none;
+      border-bottom: 2px dotted #f1b665;  
+      padding-bottom: 4px;
+    }
+
+
+    /* ===== 限時活動 ===== */
+  /* ===== 限時活動區塊 ===== */
+.limited-offer {
+  margin-top: 80px;
+  
+}
+
+.peach-card {
+  display: flex;
+ /* flex-wrap: wrap;*/
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+/* 限時活動-圖 */
+.left-image-circle {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background-image: url('Wax-apple.jpg');
+  background-size: cover;
+  background-position: center;
+
+  /* border: 6px dotted rgba(230,120,60,0.28); */
+
+  border: 4px dotted rgba(230,120,60,0.28);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06); 
+  /* padding: 28px;*/
+ margin-top: 0px;
+}
+
+.circle-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  max-width: 85%;
+}
+
+.circle-text .badge {
+  font-size: 14px;
+  padding: 6px 14px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: white;
+  color: #e85d04;
+  font-weight: bold;
+}
+
+.circle-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* 右邊卡片 */
+.offer-info {
+  background: white;
+  border-radius:35%;
+  padding: 0px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  max-width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+.offer-info .thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -68px auto 8px;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  border-radius: 100%;
+  
+}
+
+.offer-info h4 {
+  color: #8b4f2b;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.offer-info ul {
+  text-align: left;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #7b6b63;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  .left-image-circle {
+    width: 320px;
+    height: 320px;
+  }
+  .offer-info {
+    margin-top: 28px;
+  }
+}
+@media (max-width: 576px) {
+  .left-image-circle {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+  </style>
 </head>
 <body>
-    456789
+
+<main class="py-5">
+
+  <!-- ===== 精選商品 ===== -->  
+  <section class="py-4 text-center">
+    <h2 class="section-title">精選商品</h2>
+        <div class="container mt-4">
+      <div class="row justify-content-center gx-4">
+       
+        <!-- 商品 1 -->
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="Tangerine.jpg" alt="橘子">
+            </div>
+            <h5>柑橘山的日出</h5>
+            <p>橘黃色的日光在山腰綻放，橘子精靈<br>揮舞金色的果皮邀你迎接新年 !</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+
+        <!-- 商品 2 -->
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="Strawberry.jpg" alt="草莓">
+            </div>
+            <h5>莓果星球任務</h5>
+            <p>在粉紅色的星球探險，尋找藏在花瓣<br>下的甜美秘寶......</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+
+        <!-- 商品 3 -->
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="Mango.jpg" alt="芒果">
+            </div>
+            <h5>芒果瀑布谷</h5>
+            <p>金黃色的瀑布從果山流下，是夏日精<br>靈釀出的初戀果漿 !</p>
+            <button class="btn btn-custom">立即購買</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="see-more">
+        <a href="#">查看更多商品 →</a>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== 限時活動 ===== -->
+<section class="limited-offer">
+  <div class="container text-center mb-4">
+    <h2 class="section-title2">限時活動</h2>
+  </div>
+
+  <div class="container">
+    <div class="peach-card">
+
+      <!-- 左側大圖 + 白字 -->
+      <div class="left-image-circle">
+        <div class="circle-text">
+          <div class="badge">限時 5 天 | 售完為止</div>
+          <p>
+            今年夏天最甜的旅行，就藏在這一箱桃子裡。<br>
+            來自山谷果園的白鳳桃，剛剛好熟透，<br>
+            還帶著露水的香氣，限量出航！
+          </p>
+        </div>
+      </div>
+
+      <!-- 右邊說明卡片 -->
+      <div class="offer-info">
+        <div class="thumb">
+          <img src="Apple.jpg" alt="小桃子" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h4>桃木箱出航</h4>
+        <ul>
+          <li>每箱內含 6～8 顆精選鮮桃（大果裝）</li>
+          <li>天然熟成原箱包裝，可直接使用</li>
+          <li>附贈卡片一張，寫給你最想分享甜味的人</li>
+          <li>當日產地直送，冷藏配送，新鮮不等人！</li>
+        </ul>
+        <button class="btn btn-custom mt-3">點擊搶訂</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>   
+</html>
