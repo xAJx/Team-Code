@@ -1,0 +1,144 @@
+/* --- Global Variables (變數定義) --- */
+:root {
+    --primary-color: #FF5722; /* 導航列和主色調：橘色 */
+    --secondary-color: #FFFFFF; /* 白色文字 */
+    --text-color: #333333; /* 深色文字 */
+    --header-height: 104px; /* 導航列高度 */
+    --hero-height: 913px; /* 英雄區塊高度 */
+}
+
+/* Global Container to center content for the header */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header/Navigation Bar Styling (導航列樣式) --- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--primary-color); /* 確保背景為橘色 */
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-icon {
+    width: 32px; 
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.nav-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    margin-left: 40px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 兩個 icon 間距，可依需求調整 */
+}
+
+.nav-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* --- Main Hero Section Styling (英雄區塊樣式) --- */
+
+.hero-section {
+    padding-top: var(--header-height); 
+    
+    /* Frame 1829 & harvest-7458975_1920 */
+    position: relative;
+    width: 100%;
+    height: var(--hero-height);
+    
+    /* **修正: 背景圖片路徑 (使用 .png 格式) ** */
+    background: 
+        /* 1. 遮罩: 確保文字清晰可見 */
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+        /* 2. 圖片路徑: 從 CSS 資料夾退回一層 (..) 進入 Images 資料夾 */
+        url('../Images/harvest-7458975_1920-1.png') center center no-repeat;
+    
+    /* 確保圖片滿版且居中 */
+    background-size: cover;
+    
+    /* 使用 Flexbox 垂直水平居中內容 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* --- Hero Content Styling (Frame 23) --- */
+
+.hero-content-wrapper {
+    /* Flex 容器設置 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* 元素間距 */
+    
+    width: 824px; 
+    text-align: center;
+    color: var(--secondary-color); /* 白色文字 */
+}
+
+/* Vector Icon Styling - 順序 1 (最上方) */
+
+
+
+/* Description Text Styling - **修正: 順序 2 (位於中間)** */
+.hero-description {
+    order: 3; 
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+}
+
+/* Title Styling (果島小舖) - **修正: 順序 3 (位於最下方)** */
+.hero-title {
+    order: 2;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.2em;
+    margin: 0;
+}
