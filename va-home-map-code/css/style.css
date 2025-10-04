@@ -1,0 +1,183 @@
+/* ================================
+   Global tokens (Figma variables)
+================================== */
+:root{
+  --primary: #EC5317;           /* Primary/primary */
+  --text-secondary: #514841;    /* Text/secondary */
+  --text-primary: #9C7652;      /* Text/primary for title */
+  --hl-yellow: #FDE731;         /* 標題底黃條 */
+  --container-max: 1296px;      /* 內容最大寬 */
+}
+
+/* ================================
+   Base
+================================== */
+html, body{
+  background:#ffffff;
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 預設字體（與 index.html 載入的 Google Fonts 對齊） */
+body{
+  font-family: "Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* 讓圖片不會有 baseline 縫隙 */
+img{ display: block; max-width: 100%; }
+
+/* 與 Figma 對齊的內容容器（1296px） */
+.container-1296{
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 16px; /* 邊界緩衝，避免貼邊 */
+}
+
+/* ================================
+   Section: 交通方式（與 Figma 一致）
+   Frame size: 1920×880
+================================== */
+.transport-section{
+  height: 880px;                 /* 僅桌面稿；RWD 於下方覆寫為 auto */
+  position: relative;
+  background: #fff;
+  padding-top: 64px;             /* Figma：title top 約 64 */
+}
+
+/* Title: Noto Serif TC / 700 / 40 / 0.2em / #9C7652
+   並在 y=31 疊 224×17 的黃色底條 */
+.transport-title{
+  display: inline-block;
+  position: relative;
+  font-family: "Noto Serif TC",serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;            /* 120% */
+  letter-spacing: 0.2em;
+  color: var(--text-primary);
+  z-index: 0;
+}
+.transport-title::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 224px;
+  height: 17px;
+  top: 31px;                    /* 與 Figma 定位一致 */
+  background: var(--hl-yellow);
+  border-radius: 2px;
+  z-index: -1;                  /* 置於文字背後 */
+}
+
+/* Map: 1296×440 / border-radius: 128 / 置中 */
+.map-wrap{
+  position: relative;
+  width: 1296px;
+  height: 440px;
+  margin: 88px auto 40px;       /* 與標題距離 */
+  border-radius: 128px;
+  overflow: hidden;
+  background: #f2f2f2;          /* 安全底色，避免圖片未載入時露白 */
+}
+.map-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Pin: 64×64，依 Figma 在 1296×440 內的精準座標 */
+.map-pin{
+  position: absolute;
+  left: 752px;                  /* 調整這兩個值可微調針的位置 */
+  top: 252px;
+  width: 64px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* ================================
+   Two columns (gap 160)
+================================== */
+.transport-row{
+  display: flex;
+  justify-content: center;
+  gap: 160px;                    /* Figma gap */
+}
+
+/* 左欄寬 546px / 右欄寬 563px（Figma 寫死） */
+.transport-col{ width: 546px; }
+.transport-col.right{ width: 563px; }
+
+/* 單列：icon 32×32 + 文字 24/36，間距 16 */
+.transport-item{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.transport-icon{
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: contain;
+}
+
+/* 文字樣式：Text/fs-4 = 24px / 36px; 顏色 Text/secondary */
+.transport-text{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;            /* 150% */
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* 欄底虛線：2px dashed #EC5317（寬與欄同寬） */
+.transport-dash{
+  margin-top: 24px;
+  border-bottom: 2px dashed var(--primary);
+  width: 100%;
+}
+
+/* ================================
+   Optional helpers（開發時可打開）
+================================== */
+/* 8px 網格疊層（需要時把 .debug-grid 加到 body 或容器上） */
+.debug-grid{ position: relative; }
+.debug-grid::before{
+  content: "";
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ================================
+   RWD fallback（小於桌面時不強制 880 高）
+================================== */
+@media (max-width: 1400px){
+  .transport-section{
+    height: auto;
+    padding-bottom: 64px;
+  }
+  .map-wrap{
+    width: 100%;
+    border-radius: 48px;        /* 小螢幕視覺上縮圓角 */
+  }
+  .transport-row{
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .transport-col,
+  .transport-col.right{
+    width: 100%;
+    max-width: 720px;           /* 保持可讀行長 */
+  }
+}
