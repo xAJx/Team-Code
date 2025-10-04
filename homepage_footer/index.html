@@ -1,66 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>顧客回饋</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>果島小舖｜顧客回饋</title>
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  <!-- 顧客回饋區 -->
+  <!-- 顧客回饋 -->
   <section class="reviews">
     <div class="container">
-      <h2 class="title">顧客回饋</h2>
-      <div class="review-list">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <img src="va.jpg" alt="Va" class="avatar">
-          <h3>Va</h3>
-          <p>水果新鮮香甜！</p>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★☆</div>
-          <img src="una.jpg" alt="Una" class="avatar">
-          <h3>Una</h3>
-          <p>最喜歡在這裡買水果！</p>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <img src="li.jpg" alt="里歐" class="avatar">
-          <h3>里歐</h3>
-          <p>下班必逛！</p>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★☆</div>
-          <img src="aja.jpg" alt="Aja" class="avatar">
-          <h3>Aja</h3>
-          <p>走過路過不會錯過。</p>
-        </div>
+      <div class="section-title">
+        <h2 class="title">顧客回饋</h2>
       </div>
-      <a href="#" class="more-link">查看果島小舖商品 →</a>
+
+      <ul class="card-row">
+        <li class="card">
+          <div class="stars">★★★★★</div>
+          <div class="avatar"><img src="images/Va.png" alt="Va"></div>
+          <div class="name">Va</div>
+          <p class="comment">水果新鮮香甜！</p>
+        </li>
+        <li class="card">
+          <div class="stars">★★★★☆</div>
+          <div class="avatar"><img src="images/Una.png" alt="Una"></div>
+          <div class="name">Una</div>
+          <p class="comment">最喜歡在這裡買水果！</p>
+        </li>
+        <li class="card">
+          <div class="stars">★★★★★</div>
+          <div class="avatar"><img src="images/Leo.png" alt="里歐"></div>
+          <div class="name">里歐</div>
+          <p class="comment">下班必逛！</p>
+        </li>
+        <li class="card">
+          <div class="stars">★★★★☆</div>
+          <div class="avatar"><img src="images/Aj.png" alt="Aja"></div>
+          <div class="name">Aja</div>
+          <p class="comment">走過路過不會錯過。</p>
+        </li>
+      </ul>
+
+      <a class="cta" href="#">查看果島小舖商品 →</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-logo">
-        <img src="logo.png" alt="果島小舖 Logo" />
-        <p>果島小舖</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <img class="brand-logo" src="images/logo.png" alt="果島小舖">
+        <div class="brand-name">果島小舖</div>
       </div>
-      <div class="footer-info">
-        <p>果島小舖工作室</p>
-        <p>統一編號：123456789</p>
-        <p>地址：果島小舖一段101號</p>
-        <p>聯絡電話：(07)123456789</p>
+      <div class="company-info">
+        果島小舖工作室<br>
+        統一編號：123456789<br>
+        地址：果島小舖一段101號<br>
+        聯絡電話：(07) 123456789
       </div>
-      <div class="footer-social">
-        <a href="#">Line</a>
-        <a href="#">Facebook</a>
+      <div class="social">
+        <a href="#" class="social-btn">LINE</a>
+        <a href="#" class="social-btn">FB</a>
+        <div class="copyright">Copyright © 2025 果島小舖 Inc.</div>
       </div>
-    </div>
-    <div class="footer-copy">
-      Copyright © 2025 果島小舖 Inc.
     </div>
   </footer>
 </body>
